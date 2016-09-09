@@ -1,5 +1,7 @@
 <?php
-
+//all directly copied.  Nothing too interesting, some setters and basic functions.
+//Although it's nice not to have class variables, and they can be created in the ctor 
+//without types.
 class Student {
     function __construct() {
         $this->surname = '';
@@ -32,4 +34,3 @@ class Student {
         return '<pre>'.$result.'</pre>';
     }
 }
-

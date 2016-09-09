@@ -7,6 +7,8 @@
   </head>
   <body>
     <?php
+        // I figured out that PHP blocks are separate and do not share variables.  So you get one block with everything in it.
+        
         include('student.php');
         $students = array();
         $first = new Student();
@@ -29,7 +31,17 @@
         $second->add_grade(80);
         $second->add_grade(50);
         $students['a456'] = $second;
-            
+        
+        $third = new Student();
+        $third->surname = "Burns";
+        $third->first_name = "Jason";
+        $third->add_email('school','jburns43@my.bcit.ca');
+        $third->add_grade(95);
+        $third->add_grade(90);
+        $students['j111'] = $third;
+        
+        // also tried to find out what kind of sort ksort is but was unsuccessful
+        ksort($students);
             
         foreach($students as $student)
             echo $student->toString();
